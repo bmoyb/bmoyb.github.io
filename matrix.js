@@ -1,16 +1,16 @@
 var cnvs = document.getElementById("matrix");
-var ctx = cnvs.getContext("2D");
+var ctx = cnvs.getContext("2d");
 var columns = cnvs.width/10; //# of columns
 var drops = []; //array of drops - one per column
-for(var x=0; x<columns: x++)
+for(var x=0; x<columns; x++)
 {
 	drops[x] = 1; //1 = y coordinate of the drop, same for every drop initially
 }
-
+ 
 
 //make canvas full screen
-cnvs.height = window.innerHeight;
-cnvs.width = window.innerWidth;
+ctx.height = window.innerHeight;
+ctx.width = window.innerWidth;
 
 //display string
 var words = "under construction";
@@ -22,12 +22,12 @@ words = words.split("");
 //drawing the words
 function draw() {
 	//form the canvas
-	ctx.fillStyle = '(0,0,0,1)';
-	ctx.fillRect(0,0,cnvs.width,cnvs.height);
+	ctx.fillStyle = 'rgba(0,0,0,0.05)';
+	ctx.fillRect(0,0,ctx.width,ctx.height);
 
 	//green text
 	ctx.fillStyle = "#0F0";
-	ctx.font = "10px arial" 
+	ctx.font = "10px arial";
 
 	//looping drops Ϟ
 	for(var i=0; i< drops.length; i++) {
