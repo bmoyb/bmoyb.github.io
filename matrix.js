@@ -1,16 +1,12 @@
+// credit: http://thecodeplayer.com/walkthrough/matrix-rain-animation-html5-canvas-javascript
+
 var cnvs = document.getElementById("matrix");
 var ctx = cnvs.getContext("2d");
-var columns = cnvs.width/10; //# of columns
-var drops = []; //array of drops - one per column
-for(var x=0; x<columns; x++)
-{
-	drops[x] = 1; //1 = y coordinate of the drop, same for every drop initially
-}
  
 
 //make canvas full screen
-ctx.height = window.innerHeight;
-ctx.width = window.innerWidth;
+cnvs.height = window.innerHeight;
+cnvs.width = window.innerWidth;
 
 //display string
 var words = "under construction";
@@ -19,11 +15,19 @@ var words = "under construction";
 words = words.split("");
 
 
+var columns = cnvs.width/10; //# of columns
+var drops = []; //array of drops - one per column
+for(var x=0; x<columns; x++)
+{
+	drops[x] = 1; //1 = y coordinate of the drop, same for every drop initially
+}
+
+
 //drawing the words
 function draw() {
 	//form the canvas
 	ctx.fillStyle = 'rgba(0,0,0,0.05)';
-	ctx.fillRect(0,0,ctx.width,ctx.height);
+	ctx.fillRect(0,0, cnvs.width, cnvs.height);
 
 	//green text
 	ctx.fillStyle = "#0F0";
