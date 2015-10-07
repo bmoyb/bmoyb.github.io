@@ -17,7 +17,6 @@ words = words.split("");
 
 var font_size = 13;
 var columns = cnvs.width/2; //# of columns
-console.log(columns);
 
 var drops = []; //array of drops - one per column
 for(var x=0; x<columns; x++)
@@ -25,9 +24,10 @@ for(var x=0; x<columns; x++)
 	drops[x] = 1; //1 = y coordinate of the drop, same for every drop initially
 }
 
+//show note bottom left corner.
 msg.fillStyle="rgba(0,255,0,100)";
 msg.font = "bold 15px arial";
-msg.fillText("> UNDER CONSTRUCTION..", 10, window.innerHeight-10);
+msg.fillText("> XYZ UNDER CONSTRUCTION..", 10, window.innerHeight-10);
 
 
 //drawing the words
